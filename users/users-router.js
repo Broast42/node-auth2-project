@@ -4,6 +4,7 @@ const restrict = require("../middleware/restrict")
 
 router.get("/", restrict(), async(req, res, next) => {
     try{
+        console.log(req.token)
         res.json(await db.getUsers())
 
     }catch(err){
